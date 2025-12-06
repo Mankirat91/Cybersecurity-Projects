@@ -1,4 +1,4 @@
-# 🚀 Certified Security Portfolio: Web Application Penetration Testing
+# Certified Security Portfolio: Web Application Penetration Testing
 
 This repository contains my completed technical reports from a hands-on cybersecurity internship, showcasing practical skills in vulnerability exploitation and defense.
 
