@@ -1,0 +1,39 @@
+# 🛡️ Project: Exploiting and Securing Broken Authentication
+## Demonstrating Multiple Authentication and Authorization Bypass Flaws
+
+This project successfully identified and exploited three critical Broken Authentication and Authorization flaws in a deliberately vulnerable web application (bWAPP/DVWA). The primary goal was to demonstrate how weaknesses in session management and authorization logic allow attackers to bypass security controls and escalate privileges.
+
+---
+
+### 🎯 Objectives & Key Vulnerabilities Explored
+
+The project focused on demonstrating three common and high-impact authentication/authorization weaknesses:
+
+| Vulnerability Explored | Description & Impact |
+| :--- | :--- |
+| **Login Brute Force** | Weak authentication and lack of account lockout allowed credentials to be guessed using automated tools. A **Cluster Bomb attack** was executed via Burp Suite Intruder to successfully compromise credentials. |
+| **Session Fixation/Hijacking** | Demonstrated how reliance solely on a session ID permits an attacker to capture a victim's **PHPSESSID** cookie and reuse it in a separate browser to log in as the victim without needing their password. |
+| **Privilege Escalation via Cookie Modification** | Exploited an improper authorization check where access was based on a client-side parameter. By modifying a URL parameter (`admin=0` to `admin=1`), admin access was granted without proper server-side validation. |
+
+### 🛠️ Tools & Technologies
+
+* **Vulnerable Application:** bWAPP (Buggy Web Application) and DVWA (Damn Vulnerable Web Application).
+* **Interception & Attack:** Burp Suite Community Edition (Proxy, Repeater, and Intruder for Cluster Bomb attacks).
+* **Operating System:** Kali Linux (for testing).
+
+### 🔒 Mitigation Strategies (Defense Focus)
+
+To secure the application against these flaws, the following strategies were required:
+
+* **Session Management:** Implement secure session management by rotating session IDs upon successful login and ensuring session cookies are protected with the `HttpOnly` and `Secure` flags.
+* **Rate Limiting:** Implement robust rate limiting and temporary account lockout mechanisms to defend against brute-force and denial-of-service attacks.
+* **Server-Side Authorization:** Enforce all authorization and access control checks on the server side (server-side role validation), never relying on parameters passed from the client (cookies, URL parameters) for privilege decisions.
+* **Password Policies:** Enforce strong password policies to increase the time needed for successful brute-forcing.
+
+### 📜 Full Report and Deliverables
+
+The complete penetration test report, including detailed exploitation steps, supporting screenshots, and a comprehensive analysis of the vulnerabilities, is available in the following PDF file:
+
+* [Broken Authentication Report (Full Report)](./Broken authentication.pdf)
+
+---

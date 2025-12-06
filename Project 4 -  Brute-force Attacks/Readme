@@ -1,0 +1,36 @@
+# 🛡️ Project: Brute-force Attacks - Exploitation and Defense
+## Demonstrating Weak Authentication Controls Using Automated Tools
+
+This project successfully demonstrated the critical vulnerability of weak authentication controls and the lack of defensive mechanisms (such as rate limiting and account lockout) in a vulnerable web application (bWAPP). The project utilized two distinct industry tools to successfully compromise user credentials, highlighting the ease of exploitation when defenses are absent.
+
+---
+
+### 🎯 Objectives & Key Findings
+
+* **Objective:** To successfully guess a valid username and password combination using automated brute-force techniques.
+* **Key Finding:** The application lacked rate-limiting, allowing for an unlimited number of login attempts, resulting in the successful identification of the login pair **`bee:bug`**.
+* **Dual Methodology:** The attack was validated using both a GUI-based proxy tool and a powerful command-line utility, demonstrating versatile tool proficiency.
+
+### 💡 Exploitation Steps
+
+1.  **GUI Attack (Burp Suite Intruder):**
+    * A login request was captured and sent to **Burp Suite Intruder**.
+    * The attack type was set to **Cluster Bomb**, targeting both the username and password fields.
+    * The attack was successful by observing discrepancies in the response size or content length, identifying the valid credentials.
+
+2.  **Command-Line Attack (Hydra):**
+    * The attack was successfully re-executed using the command-line tool **Hydra** with the `http-post-form` module.
+    * Hydra was configured to attack the bWAPP host's login page, targeting the specific login form fields.
+    * The successful login pair was confirmed by Hydra's output, proving the vulnerability is easily exploitable via scriptable tools.
+
+### 🛠️ Tools & Technologies
+
+* **Vulnerable Application:** bWAPP (Buggy Web Application)
+* **GUI Tool:** Burp Suite Community Edition (Intruder)
+* **Command-Line Tool:** Hydra (for fast, automated testing)
+* **Operating System:** Kali Linux
+
+### 🔒 Mitigation Strategies (Defense Focus)
+
+* **Rate Limiting:** Implement strict request limits (e.g., 5 failed attempts per user/IP per minute) to slow down or halt automated attacks.
+* **Account Lockout:** After a defined number of failed attempts (e.g., 3-5 attempts), temporarily or permanently lock the user account,
