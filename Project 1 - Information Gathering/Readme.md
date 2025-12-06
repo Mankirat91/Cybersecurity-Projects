@@ -1,42 +1,18 @@
-##  Information Gathering – Penetration Testing Report
 
-This project focuses on gathering publicly available information about the target domain **vulnweb.com** using OSINT and reconnaissance techniques. The purpose of the assessment was to map the attack surface and identify potential entry points before exploitation.
+# 🚀 Certified Security Portfolio: Web Application Penetration Testing
 
-###  Tools Used
-
-* `nslookup`
-* `whois`
-* `dig`
-* `amass`
-* `Subfinder`
-* `WhatWeb`
-* `BuiltWith`
-* `Gobuster / Dirb`
-* `Nmap`
-* `theHarvester`
-
-### 🔍 Key Findings
-
-| Area         | Summary                                                     |
-| ------------ | ----------------------------------------------------------- |
-| Domain Info  | Registered under **Gandi SAS** with DNSSEC unsigned         |
-| Hosting      | Hosted on **AWS (Amazon Web Services)**                     |
-| Subdomains   | **testphp.vulnweb.com** and others identified               |
-| DNS Records  | A, NS, MX, TXT records enumerated                           |
-| Technologies | Apache, PHP, analytics components detected                  |
-| Directories  | Hidden directories discovered via brute-force               |
-| Email OSINT  | No email leaks found                                        |
-| Social OSINT | **Owned by Acunetix** (verified through LinkedIn & Twitter) |
-
-
+This repository contains my completed technical reports from a hands-on cybersecurity internship, showcasing practical skills in vulnerability exploitation and defense.
 
 ---
 
-### ✔ Status
+**Key Skills Demonstrated:**
 
-## Information Gathering phase completed successfully.
+* **Vulnerability Exploitation:** Successfully tested and exploited critical flaws including **Command Injection** and various **Broken Authentication/Authorization** bypasses.
+* **Credential Testing:** Executed automated **Brute-Force Attacks** using professional tools like Burp Suite Intruder and Hydra.
+* **Network Fundamentals:** Utilized foundational **Information Gathering** techniques for initial reconnaissance.
+* **Tool Proficiency:** Proven comfort with **Burp Suite, Hydra, and Kali Linux** for both technical execution and report generation.
+* **Defense Focused:** All reports include detailed **Mitigation Strategies** (e.g., input sanitization, rate limiting, secure session management).
 
-###  Author
+View the individual project folders for full PDF reports, exploitation steps, and supporting evidence.
 
-**Mankirat Singh**
-Cybersecurity & Ethical Hacking
+---
